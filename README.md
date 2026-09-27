@@ -5,7 +5,7 @@ volume de constrained-off no sistema elétrico brasileiro para tomada de decisã
 
 ## Demo
 
-- **Link da demo:** (se houver, ex: Vercel, Netlify, etc.)
+- **Link da demo:** oraculo-egide.vercel.app / http://egide-frontend.s3-website-us-west-2.amazonaws.com
 
 ## Tecnologias e dependências
 
