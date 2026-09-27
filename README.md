@@ -1,11 +1,34 @@
 # Égide
 
-Pipeline de dados e Machine Learning para previsão de geração renovável e
-volume de constrained-off no sistema elétrico brasileiro.
+Framework de Machine Learning para previsão de geração renovável e
+volume de constrained-off no sistema elétrico brasileiro para tomada de decisão no controle de armazenamento BESS.
 
 ## Demo
 
 - **Link da demo:** (se houver, ex: Vercel, Netlify, etc.)
+
+## Tecnologias e dependências
+
+### Pipeline de dados e Machine Learning
+
+- **Linguagem:** Python 3.14+;
+- **Gerenciador de dependências:** [uv](https://docs.astral.sh/uv/);
+- **Dados e processamento:** NumPy, pandas, PyArrow, xarray, NetCDF4 e DuckDB;
+- **Machine Learning:** PyTorch (CNN-LSTM), scikit-learn e XGBoost;
+- **Dados geoespaciais e meteorológicos:** GeoPandas, Rasterio, cfgrib, eccodes e Salem;
+- **Visualização e notebooks:** Matplotlib, Seaborn, Plotly, JupyterLab e IPyKernel;
+- **Testes:** pytest.
+
+### Frontend ORÁCULO
+
+- **Linguagem:** JavaScript (ES Modules);
+- **Framework e build:** React 19, React Router e Vite;
+- **Visualização e interface:** ECharts, Lucide React e CSS;
+- **Mapas e dados geográficos:** Turf.js, TopoJSON e GeoJSON;
+- **Comunicação com API:** Axios e Server-Sent Events (SSE).
+
+As versões completas das dependências estão em [`pyproject.toml`](pyproject.toml) e
+[`oraculo-frontend/package.json`](oraculo-frontend/package.json).
 
 ## Estado atual
 
@@ -59,6 +82,20 @@ uv run python ml/scripts/cnn_lstm_export_indv.py
 uv run python ml/scripts/copy_cnn_lstm_plot_results.py
 ```
 
+## Pastas
+
+| Pasta | Resumo |
+| --- | --- |
+| [`data/`](data/README.md) | Fontes e dados processados. |
+| [`scripts/`](scripts/README.md) | Aquisição e transformações gerais. |
+| [`ml/`](ml/README.md) | Pipeline de features, treino, modelos e inferência. |
+| [`cnn_lstm_plot_results/`](cnn_lstm_plot_results/README.md) | JSONs finais para plotagem. |
+| [`notebooks/`](notebooks/README.md) | Exploração e visualização. |
+| [`tests/`](tests/README.md) | Testes automatizados. |
+| [`docs/`](docs/README.md) | Referências e documentação conceitual. |
+| [`curtailment-model/`](curtailment-model/README.md) | Pipeline experimental de curtailment eólico. |
+| [`oraculo-frontend/`](curtailment-model/README.md) | Pipeline experimental de curtailment eólico. |
+
 ## Próximas melhorias
 
 - investigar variáveis meteorológicas mais representativas para complementar a
@@ -75,19 +112,6 @@ uv run python ml/scripts/copy_cnn_lstm_plot_results.py
   monitoramento de degradação dos modelos;
 - comparar a CNN-LSTM com modelos de referência e arquiteturas temporais mais
   recentes.
-
-## Pastas
-
-| Pasta | Resumo |
-| --- | --- |
-| [`data/`](data/README.md) | Fontes e dados processados. |
-| [`scripts/`](scripts/README.md) | Aquisição e transformações gerais. |
-| [`ml/`](ml/README.md) | Pipeline de features, treino, modelos e inferência. |
-| [`cnn_lstm_plot_results/`](cnn_lstm_plot_results/README.md) | JSONs finais para plotagem. |
-| [`notebooks/`](notebooks/README.md) | Exploração e visualização. |
-| [`tests/`](tests/README.md) | Testes automatizados. |
-| [`docs/`](docs/README.md) | Referências e documentação conceitual. |
-| [`curtailment-model/`](curtailment-model/README.md) | Pipeline experimental de curtailment eólico. |
 
 ## Licença
 
